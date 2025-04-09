@@ -1,0 +1,16 @@
+---
+title: Lab 7
+authors:
+  - name: Megan Voss
+    affiliation: Colorado State University
+    roles: writing
+    corresponding: true
+  - name: Erica Mortland
+    affiliation: Colorado State University
+    roles: writing
+    corresponding: false
+bibliography: references.bib
+---
+
+
+
