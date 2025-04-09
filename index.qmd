@@ -1,12 +1,16 @@
 ---
-title: ESS 330 Project Proposals
+title: Lab 7
 authors:
-  - name: Norah Jones
-    affiliation: The University
+  - name: Megan Voss
+    affiliation: Colorado State University
     roles: writing
     corresponding: true
+  - name: Erica Mortland
+    affiliation: Colorado State University
+    roles: writing
+    corresponding: false
 bibliography: references.bib
 ---
 
-## Section
-This is a simple placeholder for the manuscript's main document [@knuth84].
+
+

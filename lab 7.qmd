@@ -12,5 +12,127 @@ authors:
 bibliography: references.bib
 ---
 
+# Data Exploration
+
+## Fire Data
+
+```{r}
+library(tidyverse)
+
+fire_data <- read_csv("data/fire_data.csv")
+glimpse(fire_data)
+
+```
+
+### cleaning
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(lubridate)
+
+fire_data_clean <- fire_data %>%
+  clean_names() %>%                             
+  distinct() %>%                                
+  drop_na(fire_year, fire_id, ig_date) %>%      
+  mutate(
+    ig_date = mdy(ig_date),                     
+    perim_source = str_to_upper(perim_source),  
+    ecoregion_10 = str_to_title(ecoregion_10),  
+    country = str_to_title(country),            
+    extreme_day = replace_na(extreme_day, FALSE) 
+  )
+```
+
+```{r}
+fire_summary <- fire_data_clean %>%
+  group_by(fire_id, fire_year) %>%
+  summarise(
+    total_area = max(area_ha, na.rm = TRUE),
+    start_date = min(ig_date),
+    end_date = max(ig_date),
+    .groups = "drop"
+  )
+```
+
+### visual
+
+```{r}
+fire_data_clean %>%
+  group_by(fire_year) %>%
+  summarise(total_area = sum(area_ha, na.rm = TRUE)) %>%
+  ggplot(aes(x = fire_year, y = total_area)) +
+  geom_col(fill = "red") +
+  labs(
+    title = "Total Burned Area per Year",
+    x = "Year",
+    y = "Total Area Burned (ha)"
+  ) +
+  theme_minimal()
+```
+
+### test
+
+```{r}
+t.test(days_burned ~ extreme_day, data = fire_data_clean)
+
+```
+
+## Vegetation Data
+
+```{r}
+vegetation_data <- read_csv("data/vegetation_data.csv")
+glimpse(vegetation_data)
+
+```
+
+### cleaning
+
+```{r}
+vegetation_data_clean <- vegetation_data %>%
+  janitor::clean_names() %>%
+  distinct() %>%
+  filter(value != -9999) %>%
+  mutate(
+    evt_name = str_to_title(evt_name),
+    evt_fuel_n = str_to_title(evt_fuel_n),
+    evt_lf = str_to_title(evt_lf),
+    evt_phys = str_to_title(evt_phys),
+    evt_gp_n = str_to_title(evt_gp_n),
+    evt_order = str_to_title(evt_order),
+    evt_class = str_to_title(evt_class),
+    evt_sbcls = str_to_title(evt_sbcls)
+  )
+
+```
+
+
+### visual
+
+```{r}
+vegetation_data_clean %>%
+  count(evt_class, sort = TRUE) %>%
+  top_n(10, n) %>%
+  ggplot(aes(x = reorder(evt_class, n), y = n)) +
+  geom_col(fill = "forestgreen") +
+  coord_flip() +
+  labs(
+    title = "Top Vegetation Classes",
+    x = "Vegetation Class",
+    y = "Count"
+  ) +
+  theme_minimal()
+
+```
+
+### test
+
+```{r}
+veg_counts <- table(vegetation_data_clean$evt_lf)
+chisq.test(veg_counts)
+
+```
+
+
 
 
