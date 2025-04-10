@@ -60,6 +60,9 @@ execute:
 
 # Data Exploration
 
+### We are using two primary datasets to assess post-fire vegetation recovery in Oregon. The first is the Fire Severity Dataset compiled by Dillon et al. (2020), which classifies wildfires across the United States, including Oregon, by severity level—low, moderate, or high. This spatially explicit dataset allows us to map and categorize burn areas based on the intensity of fire events. It provides essential context for evaluating how severity influences vegetation regrowth. The second dataset is the LANDFIRE Vegetation Type and Canopy Cover Data (2023), which offers detailed information on vegetation types, structure, and condition both before and after wildfire events. We can track ecological transitions by comparing LANDFIRE data over time, such as forested areas shifting to shrubland or grassland following high-severity burns. Together, these datasets provide a robust foundation for our analysis of how varying fire intensities impact vegetation recovery.
+
+
 ## Fire Data
 
 ```{r}
@@ -178,5 +181,15 @@ veg_counts <- table(vegetation_data_clean$evt_lf)
 chisq.test(veg_counts)
 
 ```
+# Methods Identification
+
+### I think we will try and use a couple of tests to analyze our dataset. More exploration of the data and examining exactly what it is contained in it will be helpful to seeing overlapping information that we can compare for wildfire and vegetation correlation. Also continuing to plot the data is important as well, hopefully we could potentially create a combined plot of the two to show overlapping information they both contain as well.
+
+### I think we have everything we need, we will just need to spend more time working with the data and understanding what sort of information it actually contains, especially the vegetation data. That dataset is confusing but should be able to help us draw conclusions for our goals. 
+
+### Challenges with the data, again, mainly come from the vegetation data. It has a little bit more of an unclear set of numbers and categorical data that we may need to look at a little further to figure out. Overall, just sorting out the different overlaps of the two sets will be the main difficulty, but I think with more time we can do it. Similarly, with our methods, the main issue will be deciding what pieces of the data are actually helpful to be put to tests and plotted. But in the end, with the methods highlighted above we should be able to draw conclusions from our chosen datasets. 
+
+### I don’t think we need any supplemental data for this project, but I also think as we explore the data further there may be gaps that we’re curious about filling. There is always an opportunity to add data into the experiment and if we feel that is necessary we will. However, for the time being we feel confident that our datasets will give us the answers we need to our experiment. 
+
 
 
