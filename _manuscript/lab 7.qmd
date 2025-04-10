@@ -11,7 +11,52 @@ authors:
     corresponding: false
 date: "2025-04-010"
 bibliography: references.bib
+format: html
+execute:
+  echo: true
 ---
+
+# Introduction, Background, and Motivation
+
+#### Wildfires are a natural and essential ecological process that shape landscapes, recycle nutrients, and influence species distributions. However, in recent decades, the size, frequency, and severity of wildfires have increased dramatically in many regions due to the influence of climate change, land-use practices, and fire suppression policies (Pausas & Keeley, 2009). These changes have led to heightened concerns about how ecosystems recover following fires, particularly in fire-prone regions like the western United States.
+#### Oregon, in particular, has experienced increasingly intense fire activity in recent years, placing its diverse forested ecosystems under significant ecological stress. As fires become more severe, the capacity for natural vegetation to recover is called into question. Post-fire vegetation recovery is not only critical for restoring ecosystem structure and biodiversity but also for maintaining carbon storage, soil stability, and water cycling. The speed and trajectory of vegetation regrowth depend heavily on fire severity. Low-severity fires may only remove understory vegetation, leaving tree canopies intact, whereas high-severity fires can cause complete canopy mortality and lead to long-term ecosystem shifts (Turner et al., 2003).
+#### The distinction between low- and high-severity fires is critical to understanding post-fire recovery. High-severity events, which consume most biomass and alter soil composition, may prevent pre-fire vegetation from returning, instead leading to transitions toward grasslands or shrublands. These shifts can create feedback loops that make landscapes more prone to future fires, reduce biodiversity, and impair ecosystem services. As vegetation recovery slows or shifts, the implications extend beyond ecological concerns—they impact forest management, land use planning, and climate mitigation strategies.
+#### Existing research on post-fire recovery often focuses on case studies of single fires or small regions. While informative, these studies provide limited insight into larger landscape-level patterns and long-term ecological trends. There is a need for broader regional analyses that incorporate multiple fire events across diverse terrain and ecological zones. Oregon presents an ideal study area due to its ecological diversity and its recent experiences with increasingly severe wildfires. By examining patterns across this varied landscape, we can gain a more comprehensive understanding of how fire severity influences vegetation recovery.
+#### This study aims to address this need by analyzing the relationship between wildfire severity and vegetation regrowth across Oregon. Our central research question is: How does fire severity influence vegetation recovery trajectories in post-fire landscapes in Oregon? We hypothesize that areas impacted by high-severity fires will exhibit slower recovery and a greater shift from forested to non-forested vegetation types compared to areas that experienced low-severity burns.
+#### Understanding this relationship is essential for land managers, ecologists, and policymakers who are tasked with navigating post-fire recovery in an era of climate change. In particular, the results of this study could inform fire management strategies, such as targeted reforestation, controlled burns, and land-use zoning, to foster more resilient ecosystems.
+### Data Overview
+#### To explore our research question, we are utilizing two publicly available geospatial datasets that allow for an integrated analysis of fire severity and vegetation change over time.
+### 1. Fire Severity Data (Dillon et al., 2020):
+#### This dataset provides spatially explicit information on the severity of wildfires throughout the United States, including Oregon. Fire severity is categorized into low, moderate, and high classes, based on post-fire vegetation loss and ecosystem impact. The dataset includes detailed polygons outlining burn perimeters, along with severity ratings, which we use to classify each fire-impacted region. These classifications enable comparisons of vegetation recovery trajectories across different severity levels. By focusing on this variable, we can test our hypothesis that high-severity burns correlate with slower and more substantial ecological shifts.
+### 2. LANDFIRE Vegetation Type and Canopy Cover Data (2023):
+#### The LANDFIRE dataset provides national-scale vegetation, fuel, and disturbance data developed by the U.S. Department of the Interior and the U.S. Forest Service. Specifically, we are using the vegetation type and canopy cover layers, which contain information on pre- and post-fire vegetation conditions. This dataset allows us to track vegetation changes over time by comparing land cover classifications before and after wildfires. For example, we can detect shifts from evergreen forest to grassland, which may indicate an ecosystem transition rather than recovery. The combination of LANDFIRE and Dillon's fire severity data provides a strong foundation for assessing vegetation change within different burn severity zones.
+#### Together, these datasets offer the necessary spatial and temporal resolution to assess how vegetation responds to varying degrees of fire severity across Oregon’s diverse ecosystems.
+### Methods Overview
+#### Our analysis will use a remote sensing and statistical approach to evaluate vegetation recovery across varying fire severities. The general steps are outlined below:
+### Preprocessing and Spatial Alignment:
+#### We will begin by overlaying the fire severity polygons (Dillon et al., 2020) with LANDFIRE vegetation and canopy cover maps to identify and extract pre- and post-fire vegetation characteristics within each burn area. Geospatial software such as QGIS or R with sf and terra packages will be used for spatial alignment.
+
+
+## NDVI Extraction and Analysis:
+### To further assess vegetation recovery over time, we will use Normalized Difference Vegetation Index (NDVI) values derived from satellite imagery for selected years following the fire events. NDVI is a widely used indicator of vegetation greenness and health. By comparing NDVI values in the years following fire events across severity categories, we can quantify vegetation regrowth.
+
+
+## Comparative Statistical Testing:
+### To determine whether vegetation recovery differs significantly across fire severity levels, we will apply statistical analyses such as ANOVA to compare NDVI values and vegetation class transitions. These tests will allow us to evaluate the strength of the relationship between fire severity and vegetation recovery rates.
+
+
+## Vegetation Type Transitions:
+### Using LANDFIRE’s classification codes, we will evaluate whether high-severity fire areas are more likely to experience a shift in vegetation type (e.g., from forest to shrubland) than areas affected by lower severity burns.
+
+
+## References
+### Dillon, G. K., Menakis, J. P., & Fay, F. (2020). Fire severity data for U.S. wildfires. Dryad. https://doi.org/10.5061/dryad.tmpg4f4x1
+### LANDFIRE. (2023). Vegetation type and canopy cover data. U.S. Geological Survey. https://landfire.gov
+### Pausas, J. G., & Keeley, J. E. (2009). A burning story: The role of fire in the history of life. BioScience, 59(7), 653–664. https://doi.org/10.1525/bio.2009.59.7.10
+### Turner, M. G., Romme, W. H., Gardner, R. H., & Hargrove, W. W. (2003). Disturbance and landscape dynamics in a changing world. Ecology, 84(3), 295–310. https://doi.org/10.1890/0012-9658(2003)084[0295:DALDIA]2.0.CO;2
+
+
+
 
 # Data Exploration
 
