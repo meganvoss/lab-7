@@ -13,6 +13,7 @@ date: "2025-04-10"
 bibliography: references.bib
 format:
   html:
+    self-contained: true
     output-file: index.html
     output-dir: docs
 execute:
