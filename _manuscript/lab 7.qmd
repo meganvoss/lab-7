@@ -9,9 +9,12 @@ authors:
     affiliation: Colorado State University
     roles: writing
     corresponding: false
-date: "2025-04-010"
+date: "2025-04-10"
 bibliography: references.bib
-format: html
+format:
+  html:
+    output-file: index.html
+    output-dir: docs
 execute:
   echo: true
 ---
