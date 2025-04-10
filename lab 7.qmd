@@ -183,13 +183,34 @@ chisq.test(veg_counts)
 ```
 # Methods Identification
 
-### I think we will try and use a couple of tests to analyze our dataset. More exploration of the data and examining exactly what it is contained in it will be helpful to seeing overlapping information that we can compare for wildfire and vegetation correlation. Also continuing to plot the data is important as well, hopefully we could potentially create a combined plot of the two to show overlapping information they both contain as well.
+## Methods Overview
+### Our analysis will use a remote sensing and statistical approach to evaluate vegetation recovery across varying fire severities. The  steps are shown below:
+
+## Preprocessing and Spatial Alignment:
+### We will begin by overlaying the fire severity polygons (Dillon et al., 2020) with LANDFIRE vegetation and canopy cover maps to identify and extract pre- and post-fire vegetation characteristics within each burn area. Geospatial software such as QGIS or R with sf and terra packages will be used for spatial alignment.
+
+## NDVI Extraction and Analysis:
+### To further assess vegetation recovery over time, we will use Normalized Difference Vegetation Index (NDVI) values derived from satellite imagery for selected years following the fire events. NDVI is a widely used indicator of vegetation greenness and health. By comparing NDVI values in the years following fire events across severity categories, we can quantify vegetation regrowth.
+
+## Comparative Statistical Testing:
+### To determine whether vegetation recovery differs significantly across fire severity levels, we will apply statistical analyses such as ANOVA to compare NDVI values and vegetation class transitions. These tests will allow us to evaluate the strength of the relationship between fire severity and vegetation recovery rates.
+
+## Vegetation Type Transitions:
+### Using LANDFIRE’s classification codes, we will evaluate whether high-severity fire areas are more likely to experience a shift in vegetation type (e.g., from forest to shrubland) than areas affected by lower severity burns.
+
+## References
+### Dillon, G. K., Menakis, J. P., & Fay, F. (2020). Fire severity data for U.S. wildfires. Dryad. https://doi.org/10.5061/dryad.tmpg4f4x1
+### LANDFIRE. (2023). Vegetation type and canopy cover data. U.S. Geological Survey. https://landfire.gov
+### Pausas, J. G., & Keeley, J. E. (2009). A burning story: The role of fire in the history of life. BioScience, 59(7), 653–664. https://doi.org/10.1525/bio.2009.59.7.10
+### Turner, M. G., Romme, W. H., Gardner, R. H., & Hargrove, W. W. (2003). Disturbance and landscape dynamics in a changing world. Ecology, 84(3), 295–310. https://doi.org/10.1890/0012-9658(2003)084[0295:DALDIA]2.0.CO;2
+
+
+### Above is our main plan for analyzing the data. More exploration of the data and examining exactly what it is contained in it will be helpful to seeing overlapping information that we can compare for wildfire and vegetation correlation. Also continuing to plot the data is important as well, hopefully we could potentially create a combined plot of the two to show overlapping information they both contain as well.
 
 ### I think we have everything we need, we will just need to spend more time working with the data and understanding what sort of information it actually contains, especially the vegetation data. That dataset is confusing but should be able to help us draw conclusions for our goals. 
 
 ### Challenges with the data, again, mainly come from the vegetation data. It has a little bit more of an unclear set of numbers and categorical data that we may need to look at a little further to figure out. Overall, just sorting out the different overlaps of the two sets will be the main difficulty, but I think with more time we can do it. Similarly, with our methods, the main issue will be deciding what pieces of the data are actually helpful to be put to tests and plotted. But in the end, with the methods highlighted above we should be able to draw conclusions from our chosen datasets. 
 
 ### I don’t think we need any supplemental data for this project, but I also think as we explore the data further there may be gaps that we’re curious about filling. There is always an opportunity to add data into the experiment and if we feel that is necessary we will. However, for the time being we feel confident that our datasets will give us the answers we need to our experiment. 
-
 
 
